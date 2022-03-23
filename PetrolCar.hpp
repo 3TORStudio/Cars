@@ -3,12 +3,13 @@
 #include "Refuelable.hpp"
 
 class PetrolCar: public Car
-                ,public Refuelable 
+               , public Refuelable 
 {
+protected:
+    PetrolEngine* engine_;
 public:
     PetrolCar(PetrolEngine* engine);
     ~PetrolCar();
 
-    PetrolEngine* engine_;
 };
 

@@ -5,14 +5,14 @@
 #include "Refuelable.hpp"
 
 class HybridCar: public Car
-                ,public Refuelable
-                ,public Chargeable
+               , public Refuelable
+               , public Chargeable
 {
+protected:
+    PetrolEngine* petrolEngine_;
+    ElectricEngine* electricEngine_;
 public:
     HybridCar(PetrolEngine* petrolEng, ElectricEngine* electricEng);
     ~HybridCar();
-
-    PetrolEngine* petrolEngine_;
-    ElectricEngine* electricEngine_;
 };
 

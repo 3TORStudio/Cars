@@ -3,12 +3,12 @@
 #include "ElectricEngine.hpp"
 
 class ElectricCar: public Car
-                ,  public Chargeable
+                 , public Chargeable
 {
+protected:
+    ElectricEngine* engine_;
 public:
     ElectricCar(ElectricEngine* engine);
     ~ElectricCar();
-
-    ElectricEngine* engine_;
 };
 
