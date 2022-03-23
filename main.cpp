@@ -2,6 +2,8 @@
 #include "PetrolCar.hpp"
 #include "ElectricCar.hpp"
 #include "HybridCar.hpp"
+#include "Refuelable.hpp"
+#include "Chargeable.hpp"
 #include <iostream>
 
 int main()
@@ -11,11 +13,11 @@ int main()
     opel.accelerate(50);
     opel.brake();
     opel.accelerate(-900);
-    // opel.refuel();
+    opel.refuel();
 
     std::cout << std::endl << "NISSAN" << std::endl;
     ElectricCar nissan(new ElectricEngine(130, 650));
-    // nissan.charge();
+    nissan.charge();
     nissan.accelerate(80);
     nissan.engine_ = new ElectricEngine(150, 700);  // Changing an engine during driving is not safe
     nissan.turnLeft();
@@ -24,6 +26,6 @@ int main()
     HybridCar toyota(new PetrolEngine(80, 1400, 5), new ElectricEngine(100, 540));
     toyota.accelerate(100);
     toyota.brake();
-    // toyota.charge();
-    // toyota.refuel();
+    toyota.charge();
+    toyota.refuel();
 }
