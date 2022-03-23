@@ -1,15 +1,13 @@
+#include "Car.hpp"
 #include "ElectricEngine.hpp"
 #include "PetrolEngine.hpp"
 
-class HybridCar
+class HybridCar: public Car
 {
 public:
     HybridCar(PetrolEngine* petrolEng, ElectricEngine* electricEng);
     ~HybridCar();
-    void turnLeft();
-    void turnRight();
-    void brake();
-    void accelerate(int speed);
+
     void charge();
     void refuel();
 
